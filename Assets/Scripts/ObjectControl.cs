@@ -130,10 +130,10 @@ public class ObjectControl : MonoBehaviour
         _dragMode = !active;
     }
 
-    public void DisableMode(bool active)
+    public void DisableMode()
     {
-        _rotateMode = !active;
-        _dragMode = !active;
+        _rotateMode = false;
+        _dragMode = false;
     }
 
     void OnMouseDown()

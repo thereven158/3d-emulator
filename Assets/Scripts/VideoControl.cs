@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.EventSystems;
 
-public class VideoControl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class VideoControl : MonoBehaviour
 {
     [SerializeField]
     private VideoPlayer _videoPlayer;
@@ -14,19 +14,6 @@ public class VideoControl : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     private Slider _slider;
 
     private bool _sliding;
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log("Pointer Down");
-        _sliding = true;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        float frame = _slider.value * _videoPlayer.frameCount;
-        _videoPlayer.frame = (long)frame;
-        _sliding = false;
-    }
 
     // Update is called once per frame
     void Update()
